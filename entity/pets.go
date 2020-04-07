@@ -17,3 +17,7 @@ type Pet struct {
 	// 店の識別子
 	StoreId string `json:"store_id"`
 }
+
+type Pets struct {
+    Pets *[]Pet
+}

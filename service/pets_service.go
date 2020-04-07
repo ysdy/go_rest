@@ -12,16 +12,19 @@ type Service struct{}
 // User is alias of entity.Pet struct
 type Pet entity.Pet
 
+// User is alias of entity.Pets struct
+type Pets entity.Pets
+
 // GetAll is get all Pet
-func (s Service) GetAll() ([]Pet, error) {
+func (s Service) GetAll() (Pets, error) {
 	db := db.GetDB()
-	var u []Pet
+	var l Pets
+	var u []entity.Pet
 
-	if err := db.Find(&u).Error; err != nil {
-		return nil, err
-	}
+	db.Find(&u)
 
-	return u, nil
+	l.Pets = &u
+	return l, nil
 }
 
 // CreateModel is create Pet model
