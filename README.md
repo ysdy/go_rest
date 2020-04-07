@@ -20,7 +20,7 @@ go run main.go
 ## 動作確認
 
 ```
-curl localhost:8080/pets
+curl localhost:8080/api/v1/pets
 ```
 
 ## 参考
